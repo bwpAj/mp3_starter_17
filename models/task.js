@@ -3,14 +3,22 @@ var mongoose = require('mongoose');
 
 // Define our task schema
 var TaskSchema = new mongoose.Schema({
-    name: String,
-    description:String,
-    completed:{
-        type:Boolean
+    name: {
+        type:String,
+        required:true,
+        unique:true,
+        default:''
+    },
+    description:{
+        type:String,
+        default:''
     },
     deadline:{
-        type:Date,
-        default:Date.now
+        type:Date
+    },
+    completed:{
+        type:Boolean,
+        default:false
     },
     //The _id field of the user this task is assigned to - default ""
     assignedUser:{
