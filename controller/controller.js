@@ -50,7 +50,7 @@ exports.userList = function(req, res){
         if(_count){
             query.count(condition, function (err, total) {
                 if(!err){
-                    dealReturnFn(res,{message:'ok',data:{total:total}})
+                    dealReturnFn(res,{message:'ok',data:total})
                 }else{
                     dealReturnFn(res,{message:getErrorMessage(err),data:{}})
                 }
@@ -222,7 +222,7 @@ exports.taskList = function(req, res){
         if(_count){
             query.count(condition, function (err, total) {
                 if(!err){
-                    dealReturnFn(res,{message:'ok',data:{total:total}})
+                    dealReturnFn(res,{message:'ok',data:total})
                 }else{
                     res.status(500);
                     dealReturnFn(res,{message:getErrorMessage(err),data:{}})
