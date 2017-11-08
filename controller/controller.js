@@ -82,6 +82,7 @@ exports.createUser = function(req, res){
         var _user = new User(_body);
         _user.save(function(err,user){
             if(!err){
+                res.status(201);
                 dealReturnFn(res,{message:'ok',data:user})
             }else{
                 res.status(500);
@@ -253,6 +254,7 @@ exports.createTask = function(req, res){
         var _task = new Task(_body);
         _task.save(function(err,task){
             if(!err){
+                res.status(201);
                 dealReturnFn(res,{message:'ok',data:task})
             }else{
                 res.status(500);
