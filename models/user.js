@@ -14,8 +14,8 @@ var UserSchema = new mongoose.Schema({
         unique:true
     },
     pendingTasks:{
-        type:String,
-        default:''
+        type:Array,
+        default:[]
     },
     dateCreated:{
         type:Date,
